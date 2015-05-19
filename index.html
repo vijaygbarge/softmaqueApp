@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <title></title>
+    <script>
+        $.get("http://192.168.0.232/cgi-bin/login_page.tcl", function (data) {
+            innerD = $(data).find('#loginForm');
+            //Production
+            var TotalPro = innerD.find('.circleTotalProd .circleValue label').text().replace(/[^0-9\.]/gi, '');
+            var TodayPro = innerD.find('.circleTotalProd .circleDesc label').text().replace(/[^0-9\.]/gi, '');
+            //Co2 comsuption
+            var TotalCO2 = innerD.find('.circleCo2 .circleValue label').text().replace(/[^0-9\.]/gi, '');
+            var TotalBags = innerD.find('.circleCo2 .circleDesc label').text().replace(/[^0-9\.]/gi, '');
+            //Power output
+            var PowerOutput = innerD.find('.circlePwrOutput .circleValue label').text().replace(/[^0-9\.]/gi, '');
+
+            $('#lblTotalPro').text(TotalPro)
+            $('#lblTodayPro').text(TodayPro);
+            $('#lblTotalCO2').text(TotalCO2)
+            $('#lblTotalBags').text(TotalBags);
+            $('#lblPowerOutput').text(PowerOutput);
+        });
+    </script>
+</head>
+<body>
+<h4>Bajaj Hospital 100kWP</h4>
+    <table border="1" cellpadding="10px" width="100%">
+        <tr>
+            <th>Total Production</th>
+            <th>Today Produced</th>
+            <th>Total CO2 saved</th>
+            <th>Equal plastic bags</th>
+            <th>Power output</th>
+        </tr>
+        <tr>
+            <td><label id="lblTotalPro">0</label></td>
+            <td><label id="lblTodayPro">0</label></td>
+            <td><label id="lblTotalCO2">0</label></td>
+            <td><label id="lblTotalBags">0</label></td>
+            <td><label id="lblPowerOutput">0</label></td>
+        </tr>
+    </table>
+</body>
+</html>
