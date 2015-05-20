@@ -19,11 +19,11 @@
             //Power output
             var PowerOutput = innerD.find('.circlePwrOutput .circleValue label').text().replace(/[^0-9\.]/gi, '');
 
-            $('#lblTotalPro').text(TotalPro.length)
-            $('#lblTodayPro').text(TodayPro.length);
-            $('#lblTotalCO2').text(TotalCO2.length)
-            $('#lblTotalBags').text(TotalBags.length);
-            $('#lblPowerOutput').text(PowerOutput.length);
+            $('#lblTotalPro').text(TotalPro)
+            $('#lblTodayPro').text(TodayPro);
+            $('#lblTotalCO2').text(TotalCO2)
+            $('#lblTotalBags').text(TotalBags);
+            $('#lblPowerOutput').text(PowerOutput);
         });
 
         $('#textDiv').load('/source.html');
