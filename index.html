@@ -5,46 +5,29 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/App.js"></script>
     <title>Softmaque App</title>
-    <script>
-        var url = 'http://192.168.140.99/ajax/index.html';
-        $.get(url, function (data) {
-            innerD = $(data).find('#loginForm');
-            //Production
-            var TotalPro = innerD.find('.circleTotalProd .circleValue label').text().replace(/[^0-9\.]/gi, '');
-            var TodayPro = innerD.find('.circleTotalProd .circleDesc label').text().replace(/[^0-9\.]/gi, '');
-            //Co2 comsuption
-            var TotalCO2 = innerD.find('.circleCo2 .circleValue label').text().replace(/[^0-9\.]/gi, '');
-            var TotalBags = innerD.find('.circleCo2 .circleDesc label').text().replace(/[^0-9\.]/gi, '');
-            //Power output
-            var PowerOutput = innerD.find('.circlePwrOutput .circleValue label').text().replace(/[^0-9\.]/gi, '');
-
-            $('#lblTotalPro').text(TotalPro)
-            $('#lblTodayPro').text(TodayPro);
-            $('#lblTotalCO2').text(TotalCO2)
-            $('#lblTotalBags').text(TotalBags);
-            $('#lblPowerOutput').text(PowerOutput);
-        });
-
-        $('#textDiv').load('/source.html');
-    </script>
 </head>
 <body>
-    <div id="textDiv"></div>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">
-                    <img alt="Brand" src="icon.png" width="20" height="20" />
+                    <!--Bajaj Hospital 100kWP--> Softmaque Demo Application
                 </a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-4">
-                <p class="navbar-text">Bajaj Hospital 100kWP</p>
             </div>
         </div>
     </nav>
     <div id="PanelInfo" class="text-center">
-        <div class="row">
+            <div class="col-lg-12">
+                <div id="errorbox" class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Error!</strong> While fetching the data from server!
+                </div>
+                <label id="lblTotalBags">0</label>
+        </div>
+        <!--<div class="row">
             <div class="col-lg-6">
                 <img class="panel-icon" src="img/info-icon-1.png" alt="" />
                 <h1 class="panel-count"><label id="lblTotalPro">000</label>MWh</h1>
@@ -72,7 +55,7 @@
                 <h1 class="panel-count"><label id="lblPowerOutput">000</label>kW</h1>
                 <p class="panel-title">Power output</p>
             </div>
-        </div>
+        </div>-->
     </div>
 </body>
 </html>
