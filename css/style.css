@@ -1,0 +1,30 @@
+﻿body {
+    overflow:hidden;
+}
+
+#PanelInfo {
+    text-align: center;
+}
+#PanelInfo .row {
+    margin-bottom:20px;
+}
+
+    #PanelInfo .panel-icon {
+        width:120px;
+        height:120px;
+    }
+
+    #PanelInfo .panel-title {
+        font-weight:bold;
+    }
+
+    #PanelInfo .panel-count {
+        font-size:35px;
+        padding:0;
+        margin:0;
+    }
+     #PanelInfo .panel-count label {
+        font-size:100px;
+        margin-right:5px;
+        color:#0a58d3
+    }
