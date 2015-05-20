@@ -4,8 +4,8 @@
  * 20/05/2015
  */
 
-//var url = 'http://192.168.140.99/ajax/index.html';
-var url = 'http://192.168.0.232/cgi-bin/login_page.tcl';
+var url = 'http://192.168.140.99/ajax/index.html';
+//var url = 'http://192.168.0.232/cgi-bin/login_page.tcl';
 $(function () {
     $('#errorbox').hide();
     BindDashboard();
