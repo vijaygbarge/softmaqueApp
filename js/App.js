@@ -4,8 +4,8 @@
  * 20/05/2015
  */
 
-//var url = 'http://192.168.140.99/ajax/index.html';
-var url = 'http://192.168.0.232/cgi-bin/login_page.tcl';
+var url = 'http://192.168.140.99/ajax/index.html';
+//var url = 'http://192.168.0.232/cgi-bin/login_page.tcl';
 $(function () {
     $('#errorbox').hide();
     BindDashboard();
@@ -13,6 +13,18 @@ $(function () {
 });
 
 BindDashboard = function () {
+    $.ajax({
+        url: url,
+        crossDomain: true,
+        success: function (data) {
+            innerD = $(data).find('#loginForm');
+            var TotalBags = innerD.find('.circleCo2 .circleDesc label').text().replace(/[^0-9\.]/gi, '');
+            $('#lblTotalBags').text(TotalBags);
+        },
+        error: function (xhr, status, error) {
+            $('#lblTotalBags').text(xhr.responseText + ':' + status + ':' + error);
+        }
+    });/*
     $.get(url, function (data) {
 
         $('#errorbox').hide();
@@ -31,7 +43,8 @@ BindDashboard = function () {
         $('#lblTotalCO2').text(TotalCO2)
         $('#lblTotalBags').text(TotalBags);
         $('#lblPowerOutput').text(PowerOutput);
-    }).fail(function () {
+    }).fail(function (erre) {
+        alert(erre);
         $('#errorbox').show();
-    });
+*/
 }
