@@ -6,6 +6,7 @@
 
 var url = 'http://192.168.140.99/ajax/index.html';
 //var url = 'http://192.168.0.232/cgi-bin/login_page.tcl';
+$.support.cors = true;
 $(function () {
     $('#errorbox').hide();
     BindDashboard();
@@ -22,6 +23,9 @@ BindDashboard = function () {
             $('#lblTotalBags').text(TotalBags);
         },
         error: function (xhr, status, error) {
+            if (xhr.responseText == '') {
+                xhr.responseText = 'No-Access-Allowed';
+            }
             $('#lblTotalBags').text(xhr.responseText + ':' + status + ':' + error);
         }
     });/*
