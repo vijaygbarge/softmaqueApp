@@ -4,20 +4,22 @@
  * 20/05/2015
  */
 
-// url = 'http://192.168.140.99/ajax/index.html';
-var url = 'http://192.168.0.232/cgi-bin/login_page.tcl';
-$.support.cors = true;
+var url = 'http://192.168.140.99/ajax/index.html';
+//var url = 'http://192.168.0.232/cgi-bin/login_page.tcl';
 $(function () {
     //$('#errorbox').hide();
     // BindDashboard();
     //var timer = setInterval(BindDashboard, 10000);
 });
 
+$.support.cors = true;
+
 BindDashboard = function (type) {
     if (type == 1) {
         $.ajax({
             url: url,
             crossDomain: true,
+            crossOrigin: true,
             success: function (data) {
                 innerD = $(data).find('#loginForm');
                 var TotalBags = innerD.find('.circleCo2 .circleDesc label').text().replace(/[^0-9\.]/gi, '');
