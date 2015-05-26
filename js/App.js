@@ -27,19 +27,20 @@ BindDashboard = function (type, url) {
                 crossOrigin: true,
                 url: url,
                 success: function (data) {
+                    $('#pageinner').html($(data));
                     innerD = $(data).find('#loginForm');
                     var TotalBags = innerD.find('.circleCo2 .circleDesc label').text().replace(/[^0-9\.]/gi, '');
-                    $('#lblTotalBags').text('Type1:' + TotalBags);
+                    $('#lblType1').text('Type1:' + TotalBags);
                 },
                 error: function (xhr, status, error) {
                     if (xhr.responseText == '') {
                         xhr.responseText = 'No-Access-Allowed';
                     }
-                    $('#lblTotalBags').text('Error1:' + xhr.responseText + ':' + status + ':' + error);
+                    $('#lblType1').text('Error1:' + xhr.responseText + ':' + status + ':' + error);
                 }
             });
         } catch (e) {
-            $('#lblTotalBags').text('Error1:' + e.message);
+            $('#lblType1').text('Error1:' + e.message);
         }
     }
 
@@ -47,6 +48,7 @@ BindDashboard = function (type, url) {
         try {
             $.get(url, function (data) {
                 $('#errorbox').hide();
+                $('#pageinner').html($(data));
                 innerD = $(data).find('#loginForm');
                 //Production
                 var TotalPro = innerD.find('.circleTotalProd .circleValue label').text().replace(/[^0-9\.]/gi, '');
@@ -63,10 +65,10 @@ BindDashboard = function (type, url) {
                 $('#lblTotalBags').text('Type1:' + TotalBags);
                 $('#lblPowerOutput').text(PowerOutput);
             }).fail(function (erre) {
-                $('#lblTotalBags').text('Error2:' + erre.responseText);
+                $('#lblType2').text('Error2:' + erre.responseText);
             });
         } catch (e) {
-            $('#lblTotalBags').text('Error2:' + e.message);
+            $('#lblType2').text('Error2:' + e.message);
         }
     }
 }
