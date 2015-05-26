@@ -59,11 +59,12 @@ BindDashboard = function (type, url) {
                 //Power output
                 var PowerOutput = innerD.find('.circlePwrOutput .circleValue label').text().replace(/[^0-9\.]/gi, '');
 
-                $('#lblTotalPro').text(TotalPro)
-                $('#lblTodayPro').text(TodayPro);
-                $('#lblTotalCO2').text(TotalCO2)
-                $('#lblTotalBags').text('Type1:' + TotalBags);
-                $('#lblPowerOutput').text(PowerOutput);
+                //$('#lblTotalPro').text(TotalPro)
+                //$('#lblTodayPro').text(TodayPro);
+                //$('#lblTotalCO2').text(TotalCO2)
+                //$('#lblTotalBags').text('Type1:' + TotalBags);
+                //$('#lblPowerOutput').text(PowerOutput);
+                $('#lblType2').text('Type1:' + TotalBags);
             }).fail(function (erre) {
                 $('#lblType2').text('Error2:' + erre.responseText);
             });
