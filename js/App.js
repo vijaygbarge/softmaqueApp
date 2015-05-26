@@ -11,14 +11,15 @@ $(function () {
     //$('#errorbox').hide();
     // BindDashboard();
     //var timer = setInterval(BindDashboard, 10000);
-    url = $('#txtUrl').val();
+    BindDashboard(1, url);
+    BindDashboard(2, url);
 });
 
 $.support.cors = true;
 $.ajaxSetup({
     crossOrigin: true
 });
-BindDashboard = function (type) {
+BindDashboard = function (type, url) {
     if (type == 1) {
         try {
             $.ajax({
@@ -38,7 +39,7 @@ BindDashboard = function (type) {
                 }
             });
         } catch (e) {
-            $('#lblTotalBags').text('Error:' + e.message);
+            $('#lblTotalBags').text('Error1:' + e.message);
         }
     }
 
