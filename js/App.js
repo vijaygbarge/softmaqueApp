@@ -27,7 +27,7 @@ BindDashboard = function (type, url) {
                 crossOrigin: true,
                 url: url,
                 success: function (data) {
-                    $('#pageinner').html($(data));
+                    $('#pageinner').text(data);
                     innerD = $(data).find('#loginForm');
                     var TotalBags = innerD.find('.circleCo2 .circleDesc label').text().replace(/[^0-9\.]/gi, '');
                     $('#lblType1').text('Type1:' + TotalBags);
@@ -48,7 +48,7 @@ BindDashboard = function (type, url) {
         try {
             $.get(url, function (data) {
                 $('#errorbox').hide();
-                $('#pageinner').html($(data));
+                $('#pageinner').text(data);
                 innerD = $(data).find('#loginForm');
                 //Production
                 var TotalPro = innerD.find('.circleTotalProd .circleValue label').text().replace(/[^0-9\.]/gi, '');
