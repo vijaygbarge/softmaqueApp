@@ -10,7 +10,21 @@
 }
 #compLogo
 {
-    margin-left: 10px;
+    margin:5px 0 0 30px;
+}
+#headerTitle
+{
+   background: #0072bc;
+   color: #fff;
+   text-align: center;
+	    
+}
+
+#headerTitle h4
+{
+    font-size: 20px;
+    margin: 5px;
+    padding: 0;
 }
 .glyphicon
 {
@@ -36,10 +50,25 @@
     padding: 0;
     margin: 0;
 }
+
 #PanelInfo .panel-count label
 {
     font-size: 100px;
     margin-right: 5px;
+}
+
+@media (min-width: 1900px) 
+{
+    #PanelInfo .panel-icon
+    {
+        width: 240px;
+        height: 240px;
+    }
+    #PanelInfo .panel-count label
+    {
+        font-size: 200px;
+        margin-right: 5px;
+    }
 }
 .panel-body .value-block
 {
