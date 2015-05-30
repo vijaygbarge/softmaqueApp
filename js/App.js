@@ -12,14 +12,26 @@ var url = 'http://192.168.140.99/ajax/index.html';
 
 var clock;
 $(function () {
-    clock = $('#Clock').FlipClock({
-        clockFace: 'TwelveHourClock'
-    });
     $('#errorbox').hide();
+    startTime();
     BindDashboard();
-    var timer = setInterval(BindDashboard, 30000);
+    var dashboardpanel = setInterval(BindDashboard, 30000);
+    var timer = setTimeout(startTime, 500);
 
 });
+
+function startTime() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    $('#lblDate').text(date.toLocaleDateString());
+    $('#lblClock').text(hours + ':' + minutes + ' ' + ampm);
+}
 
 BindDashboard = function () {
     try {
