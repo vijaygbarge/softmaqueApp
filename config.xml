@@ -6,14 +6,14 @@
         id        = "com.softmaque.infofetch"
         version   = "1.0.0">
 
-    <name>Softmaque App</name>
+    <name>Solar dashboard</name>
 
     <description>
-       This is the beta application of Softmaque Consultant
+       This application is design and developed by Softmaque Consulting for Bajaj Electricals Ltd.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        Softmaque Consultant
+    <author href="http://phonegap.com" email="shareque@outlook.com">
+       Mirza Shareque (shareque@outlook.com) - Softmaque Consultant
     </author>
 
     <!--
