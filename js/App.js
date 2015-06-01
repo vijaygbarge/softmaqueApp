@@ -1,7 +1,7 @@
 ﻿/* This Application is Designed and Developed by 
 * Mirza Shareque shareque@outlook.com 
 * Softmaque Consultant
-* 20/05/2015
+* 01/06/2015
 */
 $.support.cors = true;
 $.ajaxSetup({
@@ -15,15 +15,15 @@ $(function () {
     $('#errorbox').hide();
     startTime();
     BindDashboard();
-    var dashboardpanel = setInterval(BindDashboard, 30000);
-    var timer = setTimeout(startTime, 500);
-
+    var dashboardpanel = setInterval(reload, 30000);
 });
-
+reload = function () {
+    startTime();
+    BindDashboard();
+}
 function startTime() {
     var date = new Date();
     var prettyDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-
     var hours = date.getHours();
     var minutes = date.getMinutes();
     var ampm = hours >= 12 ? 'PM' : 'AM';
@@ -62,7 +62,7 @@ BindDashboard = function () {
             error: function (xhr, status, error) {
 
                 if (xhr.responseText == '') {
-                    xhr.responseText = 'No-Access-Allowed';
+                    xhr.responseText = 'Time Out ';
                 }
                 $('#lblError').text('Error:' + xhr.responseText + ':' + status + ':' + error);
                 $('#errorbox').show();

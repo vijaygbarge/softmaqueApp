@@ -24,16 +24,20 @@
 }
 #headerTitle
 {
-    background: #0072bc;
+    background:#f15922;
+    border-bottom: 3px solid #0072bc;
     color: #fff;
     text-align: center;
+    text-shadow: 1px 1px 1px #000;
 }
 
 #headerTitle h4
 {
-    font-size: 40px;
+    font-size: 50px;
     margin: 5px;
     padding: 0;
+    font-weight: bold;
+	
 }
 .glyphicon
 {
